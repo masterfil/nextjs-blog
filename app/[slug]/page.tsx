@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import React from "react";
 import { formatDate } from "@/lib/utils";
-import RemoteMDX from "@/components/remote-MDX";
+import RemoteMDX from "@/components/remoteMDX";
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = await params;
@@ -15,10 +15,10 @@ export default async function Post({ params }: { params: { slug: string } }) {
   }
 
   const { metadata, content } = post;
-  const { title, image, author, publishedAt } = metadata;
+  const { title, image, author, date } = metadata;
 
   return (
-    <section className="pb-24 pt-32">
+    <section className="pb-24 pt-10">
       <div className="container max-w-3xl">
         <Link
           href="/"
@@ -39,11 +39,10 @@ export default async function Post({ params }: { params: { slug: string } }) {
         <header>
           <h1 className="text-3xl font-bold">{title}</h1>
           <p className="mt-3 tex-xs text-muted-foreground">
-            {author} / {formatDate(publishedAt ?? "")}
+            {author} / {formatDate(date ?? "")}
           </p>
         </header>
         <main className="prose dark:prose-invert mt-16">
-          {/* <MDXRemote source={content} /> */}
           <RemoteMDX source={content} />
         </main>
       </div>

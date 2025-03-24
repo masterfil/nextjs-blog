@@ -15,8 +15,9 @@ export type PostMetadata = {
   summary?: string;
   image?: string;
   author?: string;
-  publishedAt?: string;
+  date?: string;
   slug?: string;
+  className?: string;
 };
 
 // Read the content of all posts and parse
@@ -43,7 +44,7 @@ export async function getAllPosts(limit?: number): Promise<PostMetadata[]> {
   const posts = files
     .map((file) => getPostMetadata(file))
     .sort((a, b) => {
-      if (new Date(a.publishedAt ?? "") < new Date(b.publishedAt ?? "")) {
+      if (new Date(a.date ?? "") < new Date(b.date ?? "")) {
         return 1;
       } else {
         return -1;

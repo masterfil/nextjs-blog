@@ -14,14 +14,12 @@ export default function PostsList({ posts }: { posts: PostMetadata[] }) {
           >
             <div className="max-w-lg">
               <p className="text-lg font-semibold">{post.title}</p>
-              <p className="mt-1 line-clamp-2 text-sm font-light text-muted-foreground">
+              <p className="text-muted-foreground mt-1 line-clamp-2 text-sm font-light">
                 {post.summary}
               </p>
             </div>
-            {post.publishedAt && (
-              <p className="mt-1 text-sm font-light">
-                {formatDate(post.publishedAt)}
-              </p>
+            {post.date && (
+              <p className="mt-1 text-sm font-light">{formatDate(post.date)}</p>
             )}
           </Link>
         </li>
