@@ -5,14 +5,14 @@ import Link from "next/link";
 
 export const Newsletter = () => {
   return (
-    <div className="bg-muted container w-full px-4 py-12 md:px-6">
+    <div className="bg-muted container w-full rounded-lg border px-4 py-12 md:px-6">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="space-y-2">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
             Subscribe to my newsletter
           </h2>
           <p className="text-muted-foreground max-w-[600px] md:text-xl">
-            Get notified when I publish new articles and tutorials
+            Get notified when I publish new articles
           </p>
         </div>
         <div className="mx-auto w-full max-w-md space-y-2">

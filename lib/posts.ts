@@ -17,6 +17,8 @@ export type PostMetadata = {
   author?: string;
   date?: string;
   slug?: string;
+  categories?: string[];
+  tags?: string[];
   className?: string;
 };
 

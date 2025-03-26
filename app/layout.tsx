@@ -1,17 +1,32 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist_Mono,
+  Roboto_Mono,
+  Noto_Sans_Mono,
+  Red_Hat_Mono,
+} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
+  subsets: ["latin"],
+});
+
+const notoSansMono = Noto_Sans_Mono({
+  variable: "--font-noto-sans-mono",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const redHatsMono = Red_Hat_Mono({
+  variable: "--font-noto-red-hat-mono",
   subsets: ["latin"],
 });
 
@@ -26,13 +41,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
-      >
+    <html
+      lang="en"
+      className={`${robotoMono.variable} ${notoSansMono.variable} ${geistMono.variable} ${redHatsMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body className={`flex min-h-screen flex-col antialiased`}>
         <ThemeProvider>
           <Navbar />
-          <main className="grow baseContainer">{children}</main>
+          <main className="baseContainer grow py-6">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

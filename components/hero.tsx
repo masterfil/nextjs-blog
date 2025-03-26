@@ -16,11 +16,11 @@ export const Hero = () => {
             </p>
           </div>
           <div className="space-x-4">
-            <Button asChild>
+            <Button>
               <Link href="/latest">Latest Posts</Link>
             </Button>
-            <Button variant="outline" asChild>
-              <Link href="/categories">Browse Categories</Link>
+            <Button variant="outline">
+              <Link href="/archive">Browse Archive</Link>
             </Button>
           </div>
         </div>

@@ -13,18 +13,17 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { name: "Home", href: "/" },
     { name: "Blog", href: "/blog" },
-    { name: "Categories", href: "/categories" },
+    { name: "Archive", href: "/archive" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
   return (
     <nav className="dark:bg-background sticky top-0 z-50 w-full bg-white shadow-md">
-      <div className="baseContainer flex h-16 items-center justify-between">
-        <Link href="/" className="text-2xl font-bold transition-colors">
-          MyBlog
+      <div className="baseContainer flex h-14 items-center justify-between">
+        <Link href="/" className="text-xl font-bold transition-colors">
+          BlogName
         </Link>
 
         {/* Desktop Navigation */}
@@ -33,7 +32,7 @@ const Navbar = () => {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold transition-colors"
+              className="text-sm font-semibold transition-colors hover:underline"
             >
               {item.name}
             </Link>

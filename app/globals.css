@@ -5,6 +5,11 @@
 @plugin "@tailwindcss/typography";
 
 :root {
+  /* --font-roboto-mono: "Roboto Mono", monospace; */
+  --font-noto-sans-mono: "Noto Sans Mono", monospace;
+  /* --font-geist-mono: "Geist Mono", monospace; */
+  /* --font-noto-red-hat-mono: "Red Hat Mono", monospace; */
+
   --radius: 0.625rem;
 
   --background: oklch(1 0 0);
@@ -218,6 +223,13 @@
     @apply text-3xl;
   }
   .baseContainer {
-    @apply max-w-3xl mx-auto;
+    @apply mx-auto max-w-3xl;
   }
+}
+
+body {
+  /* font-family: var(--font-roboto-mono); */
+  font-family: var(--font-noto-sans-mono);
+  /* font-family: var(--font-geist-mono); */
+  /* font-family: var(--font-noto-red-hat-mono); */
 }
