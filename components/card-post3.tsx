@@ -26,7 +26,7 @@ const CardPost3 = ({ post }: { post: PostMetadata }) => {
               {post.categories?.map((category) => (
                 <Badge
                   key={category}
-                  variant="secondary"
+                  variant="default"
                   className="mr-2 text-[10px]"
                 >
                   {category}

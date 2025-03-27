@@ -42,7 +42,6 @@ export default function PostWithSearch({ posts }: { posts: PostMetadata[] }) {
     setSelectedCategory(category);
   };
 
-
   return (
     <>
       <div className="flex w-3xl items-center justify-between space-x-2">
@@ -55,11 +54,13 @@ export default function PostWithSearch({ posts }: { posts: PostMetadata[] }) {
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
-      <div className="pt-4">
+      <div className="py-4">
         {uniqueCategories.map((uniqueCategorie) => (
           <Badge
             key={uniqueCategorie}
-            variant={uniqueCategorie === selectedCategory ? "default" : "secondary"}
+            variant={
+              uniqueCategorie === selectedCategory ? "default" : "secondary"
+            }
             className="mr-2 cursor-pointer space-x-2 text-xs"
             onClick={() => handleClick(uniqueCategorie)}
           >

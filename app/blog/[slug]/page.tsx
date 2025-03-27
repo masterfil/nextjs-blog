@@ -6,6 +6,7 @@ import React from "react";
 import { formatDate } from "@/lib/utils";
 import RemoteMDX from "@/components/remoteMDX";
 import { ArrowLeft } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = await params;
@@ -25,38 +26,41 @@ export default async function Post({ params }: { params: { slug: string } }) {
           <Image className="object-cover" src={image} alt={title || ""} fill />
         </div>
       )}
-      <header>
+      <header className="mb-12">
         <h1 className="text-3xl font-bold">{title}</h1>
         <p className="tex-xs text-muted-foreground mt-3">
           {author} / {formatDate(date ?? "")}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          {metadata.tags?.map((tag) => (
-            <span
-              key={tag}
-              className="inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800"
-            >
-              {tag}
-            </span>
-          ))}
           {metadata.categories?.map((category) => (
-            <span
+            <Badge
               key={category}
-              className="inline-block rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800"
+              variant="default"
+              className="space-x-2 text-[10px]"
             >
               {category}
-            </span>
+            </Badge>
+          ))}
+          {metadata.tags?.map((tag) => (
+            <Badge
+              key={tag}
+              variant="secondary"
+              className="space-x-2 text-[10px]"
+            >
+              {tag}
+            </Badge>
           ))}
         </div>
       </header>
-      <section className="prose dark:prose-invert mt-16 max-w-none">
+      <section className="prose prose-sm dark:prose-invert max-w-none">
         <RemoteMDX source={content} />
       </section>
       <Link
         href="/"
-        className="mb-8 inline-flex items-center gap-2 text-sm font-light"
+        className="my-8 inline-flex items-center gap-1 font-semibold hover:underline"
       >
-        <ArrowLeft /> Go Back
+        <ArrowLeft />
+        Go Back
       </Link>
     </article>
   );

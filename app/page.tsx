@@ -1,6 +1,7 @@
 import CardBig from "@/components/card-big";
 import CardGrid from "@/components/card-grid";
 import CardGrid2 from "@/components/card-grid2";
+import Cards3 from "@/components/cards3";
 import FeaturedPosts from "@/components/featured-posts";
 import { Hero } from "@/components/hero";
 import HeroBg from "@/components/hero-bg";
@@ -16,10 +17,12 @@ export default async function Home() {
     <>
       {/* <HeroBg /> */}
       {/* <Hero /> */}
-      <CardBig post={mainPost} />
-      <FeaturedPosts posts={selectedPosts} />
+      {/* <CardBig post={mainPost} /> */}
+      {/* <h2 className="pb-4 text-2xl font-bold">Featured Posts</h2> */}
+      <Cards3 posts={selectedPosts} />
+      {/* <FeaturedPosts posts={selectedPosts} /> */}
       {/* <CardGrid posts={posts} /> */}
-      <CardGrid2 posts={latestPosts} title="Latest Posts"/>
+      <CardGrid2 posts={latestPosts} title="Latest Posts" />
       <Newsletter />
     </>
   );

@@ -1,3 +1,4 @@
+import SocialIcons from "@/components/social-icons";
 import React from "react";
 
 const About = () => {
@@ -15,6 +16,7 @@ const About = () => {
         vero! Rem dolore tempora aspernatur voluptas, dolor recusandae
         voluptates iure.
       </p>
+      <SocialIcons />
     </div>
   );
 };
