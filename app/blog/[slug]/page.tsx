@@ -1,12 +1,11 @@
 import { getPostBySlug } from "@/lib/posts";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import React from "react";
 import { formatDate } from "@/lib/utils";
 import RemoteMDX from "@/components/remoteMDX";
-import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import GoBack from "@/components/go-back";
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = await params;
@@ -55,13 +54,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <section className="prose prose-sm dark:prose-invert max-w-none">
         <RemoteMDX source={content} />
       </section>
-      <Link
-        href="/"
-        className="my-8 inline-flex items-center gap-1 font-semibold hover:underline"
-      >
-        <ArrowLeft />
-        Go Back
-      </Link>
+      <GoBack />
     </article>
   );
 }
