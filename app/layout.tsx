@@ -9,6 +9,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
@@ -50,6 +51,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Navbar />
           <main className="baseContainer grow py-6">{children}</main>
+          <Toaster />
           <Footer />
         </ThemeProvider>
       </body>
