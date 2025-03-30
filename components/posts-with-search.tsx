@@ -44,7 +44,7 @@ export default function PostWithSearch({ posts }: { posts: PostMetadata[] }) {
 
   return (
     <>
-      <div className="flex w-3xl items-center justify-between space-x-2">
+      <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold">All Post</h2>
         <Input
           type="text"

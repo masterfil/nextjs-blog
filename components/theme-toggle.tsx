@@ -22,6 +22,7 @@ export default function ThemeToggle() {
       size="sm"
       variant="ghost"
       onClick={() => setTheme(resolvedTheme === "dark" ? "white" : "dark")}
+      className="hidden md:block"
     >
       {resolvedTheme === "dark" ? (
         <SunIcon className="size-4" />

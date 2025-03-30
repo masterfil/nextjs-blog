@@ -223,7 +223,7 @@
     @apply text-3xl;
   }
   .baseContainer {
-    @apply mx-auto max-w-3xl;
+    @apply mx-auto max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-3xl xl:max-w-4xl;
   }
 }
 

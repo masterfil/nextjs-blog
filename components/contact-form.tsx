@@ -19,14 +19,26 @@ import { FormSchema } from "@/lib/form-schema";
 import { z } from "zod";
 import { sendForm } from "@/lib/email";
 
-interface IFormInput {
-  firstName: string
-  lastName: string
-  age: number
-}
+// interface IFormInput {
+//   firstName: string;
+//   lastName: string;
+//   age: number;
+// }
+
+// export const FormSchema = z.object({
+//   name: z.string().min(2, {
+//     message: "Username must be at least 2 characters.",
+//   }),
+//   email: z.string().min(2, {
+//     message: "Username must be at least 2 characters.",
+//   }),
+//   text: z.string().min(2, {
+//     message: "Username must be at least 2 characters.",
+//   }),
+// });
 
 export function ContactForm() {
-  const { register, handleSubmit } = useForm<IFormInput>()
+  // const { register, handleSubmit } = useForm<IFormInput>();
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -44,19 +56,19 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-sm space-y-6">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>name</FormLabel>
+              <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input placeholder="name" {...field} />
               </FormControl>
-              <FormDescription>
+              {/* <FormDescription>
                 This is your public display name.
-              </FormDescription>
+              </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -68,11 +80,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Email" {...field} />
+                <Input placeholder="test@gmail.com" {...field} />
               </FormControl>
-              <FormDescription>
+              {/* <FormDescription>
                 This is your public display email.
-              </FormDescription>
+              </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -85,14 +97,14 @@ export function ContactForm() {
               <FormLabel>Text</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Tell us a little bit about yourself"
+                  placeholder="text..."
                   className="resize-none"
                   {...field}
                 />
               </FormControl>
-              <FormDescription>
+              {/* <FormDescription>
                 You can <span>@mention</span> other users and organizations.
-              </FormDescription>
+              </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
